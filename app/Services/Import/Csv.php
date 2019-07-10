@@ -8,13 +8,11 @@ class Csv {
     {
         $header = null;
         $data = [];
-        $seed = [];
-        if (($handle = fopen($filename, 'r')) !== FALSE)
-        {
-            while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
-            {
+
+        if (($handle = fopen($filename, 'r')) !== FALSE) {
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
                 if(!$header) {
-                    $header = $row;
+                    $header = self::lower($row);
                 } else {
                     $data[] = array_combine($header, $row);
                 }
@@ -22,12 +20,17 @@ class Csv {
             fclose($handle);
         }
 
-        if(is_array($data) && count($data)) {
-            foreach ($data as $k1 => $v1)
-                foreach($v1 as $k2 => $v2)
-                    $seed[$k1][strtolower($k2)] = $v2;
+        return $data;
+    }
+
+    private static function lower(array $arr) :array
+    {
+        $tmp = [];
+
+        foreach ($arr as $item) {
+            $tmp[] = strtolower($item);
         }
 
-        return $seed;
+        return $tmp;
     }
 }

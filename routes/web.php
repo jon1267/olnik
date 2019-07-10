@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Для отладки класса(сервиса) Csv.php
+//Route::get('/csv', 'PropertiesController@testCsv');
