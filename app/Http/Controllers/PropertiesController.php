@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\Import\Csv;
+//use App\Services\Import\Csv;
 
 class PropertiesController extends Controller
 {
-
+    public function index()
+    {
+        return view('site.vue');
+    }
 
     /*public function testCsv()
     {

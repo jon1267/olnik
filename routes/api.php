@@ -7,5 +7,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // resource
-Route::resource('props', 'APIPropsController')
-    ->except(['create']);
+Route::resource('prop', 'Api\APIPropsController')
+    ->except(['create', 'edit']);
