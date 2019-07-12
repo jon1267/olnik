@@ -66,7 +66,8 @@
             </table>
 
 
-            <!--<div class="pull-left">
+            <!-- пагинация... (пока закомментил бо шось не те)
+            <div class="pull-left">
                 <ul class="pagination">
                     <li>Page {{ pagination.current_page}}
                         of {{ pagination.last_page}} </li>
@@ -132,6 +133,7 @@
                     })
                     .catch(err => console.log(err));
             },
+
             makePagination(meta, links) {
                 let pagination = {
                     current_page: meta.current_page,
@@ -142,6 +144,7 @@
 
                 this.pagination = pagination;
             },
+
             deleteProperty(id) {
                 if(confirm('Are you sure you want to delete this ?')) {
                     fetch(`api/prop/${id}`, {
@@ -155,6 +158,7 @@
                         .catch(err => console.log(err))
                 }
             },
+
             editProperty(property) {
                 this.property.property_id = property.id;
                 this.property.id = property.id;
@@ -166,6 +170,7 @@
                 this.property.garages = property.garages;
                 this.showEditForm();
             },
+
             showSearchResult(page_params) {
                 if(page_params === false) {
                     this.fetchProperties();
@@ -188,16 +193,19 @@
                 this.showAdd = false;
                 this.showEdit =false;
             },
+
             showAddForm() {
                 this.showAdd = true;
                 this.showFind = false;
                 this.showButtons = false;
             },
+
             showFindForm() {
                 this.showFind = true;
                 this.showAdd = false;
                 this.showButtons = false;
             },
+
             showEditForm() {
                 this.showEdit = true;
                 this.showFind = false;
