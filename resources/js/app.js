@@ -21,10 +21,12 @@ window.Vue = require('vue');
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //Vue.component('properties', require('./components/Properties.vue').default);
-Vue.component('properties', require('./components/Properties.vue').default);
 Vue.component('navbar', require('./components/Navbar.vue').default);
+Vue.component('properties', require('./components/Properties.vue').default);
 Vue.component('search-form', require('./components/SearchForm.vue').default);
-Vue.component('bootstrap-alert', require('./components/BootstrapAlert.vue'));
+Vue.component('add-form', require('./components/AddForm.vue').default);
+Vue.component('edit-form', require('./components/EditForm.vue').default);
+Vue.component('bootstrap-alert', require('./components/BootstrapAlert.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

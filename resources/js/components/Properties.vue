@@ -17,9 +17,9 @@
             </search-form>
         </div>
 
-        <!--<add-form v-if="showAdd" v-on:added="afterAddProperty"></add-form>-->
+        <add-form v-if="showAdd" v-on:added="afterAddProperty"></add-form>
 
-        <!--<edit-form v-if="showEdit" v-on:updated="afterAddProperty"
+        <edit-form v-if="showEdit" v-on:updated="afterAddProperty"
                    :id = property.id
                    :name = property.name
                    :price = property.price
@@ -27,7 +27,7 @@
                    :bathrooms = property.bathrooms
                    :storeys = property.storeys
                    :garages = property.garages>
-        </edit-form>-->
+        </edit-form>
 
         <div v-show="showTable">
             <table class="table table-bordered table-striped" >
@@ -66,7 +66,7 @@
             </table>
 
 
-            <div class="pull-left">
+            <!--<div class="pull-left">
                 <ul class="pagination">
                     <li>Page {{ pagination.current_page}}
                         of {{ pagination.last_page}} </li>
@@ -89,7 +89,7 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div>-->
 
         </div>
     </div>
@@ -128,7 +128,7 @@
                     .then(res => {
                         //console.log(res.data);
                         this.properties = res.data;
-                        vm.makePagination(res.meta, res.links);
+                        //vm.makePagination(res.meta, res.links);
                     })
                     .catch(err => console.log(err));
             },
